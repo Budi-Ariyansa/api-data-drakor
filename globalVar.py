@@ -1,0 +1,5 @@
+HOST = "ep-polished-water-07743317-pooler.us-east-1.aws.neon.tech"
+DATABASE = "verceldb"
+USER = "default"
+PASSWORD = "mIJWBha6r1SV"
+PORT = "5432"
