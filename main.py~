@@ -52,7 +52,7 @@ class PGSql:
 @app.route("/list-data-drakor-json", methods=["POST", "GET"])
 def list_data_drakor_json():
     pgsql = PGSql()
-    datass = pgsql.select_all("""
+    datas = pgsql.select_all("""
         select 
             kdrama_name, kdrama_total_episode, kdrama_status, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
             kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee, kdrama_duration, kdrama_content_rating
@@ -61,7 +61,7 @@ def list_data_drakor_json():
     """)
 
     list_data_drakor = []
-    for data in datass:
+    for data in datas:
         temp_data = {}
         for key, drakor in zip(pgsql.get_column_names(), data):
             temp_data.update({key[0]:drakor})
